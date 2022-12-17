@@ -1,0 +1,30 @@
+cabal-version: 3.4
+name: sentence-generator
+version: 0.1.0.0
+license: GPL-3.0-only
+license-file: LICENSE
+author: Tom Cumming
+maintainer: mail@tomcumming.co.uk
+
+common shared
+  ghc-options: -Wall
+  default-extensions: OverloadedStrings
+  build-depends: base, text, containers, mtl, conduit
+  default-language: GHC2021
+
+library
+  import: shared
+  exposed-modules: MyLib
+  -- other-modules:
+  -- other-extensions:
+  hs-source-dirs: src
+
+executable tatoeba
+  import: shared
+  main-is: Tatoeba.hs
+  -- other-modules:
+  -- other-extensions:
+  build-depends:
+    sentence-generator,
+    optparse-applicative
+  hs-source-dirs: app
