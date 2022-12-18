@@ -2,12 +2,12 @@ module Tatoeba.Frequency (frequency) where
 
 import Data.Aeson.Text (encodeToLazyText)
 import Data.Conduit
-import qualified Data.Conduit.Combinators as C
+import Data.Conduit.Combinators qualified as C
 import Data.Foldable (fold)
-import qualified Data.Map.Strict as Map
-import qualified Data.Sequence as Seq
-import qualified Data.Text as T
-import qualified Data.Text.IO as T
+import Data.Map.Strict qualified as Map
+import Data.Sequence qualified as Seq
+import Data.Text qualified as T
+import Data.Text.IO qualified as T
 import Data.Text.Lazy (toStrict)
 import SentGen.Tokenise.WhiteSpace (tokenise)
 

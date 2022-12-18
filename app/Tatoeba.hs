@@ -1,9 +1,9 @@
 module Main where
 
 import Data.Conduit
-import qualified Data.Conduit.Combinators as C
+import Data.Conduit.Combinators qualified as C
 import Data.Foldable (fold)
-import qualified Data.Text as T
+import Data.Text qualified as T
 import Options.Applicative
 import Tatoeba.Convert (convert)
 import Tatoeba.Frequency (frequency)

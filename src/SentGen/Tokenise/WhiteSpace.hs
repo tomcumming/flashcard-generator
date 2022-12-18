@@ -2,7 +2,7 @@ module SentGen.Tokenise.WhiteSpace (tokenise) where
 
 import Data.Char (isLetter)
 import Data.Sequence (Seq, fromList)
-import qualified Data.Text as T
+import Data.Text qualified as T
 
 tokenise :: T.Text -> Seq T.Text
 tokenise =
