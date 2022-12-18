@@ -8,13 +8,16 @@ maintainer: mail@tomcumming.co.uk
 
 common shared
   ghc-options: -Wall
-  default-extensions: OverloadedStrings
+  default-extensions:
+    OverloadedStrings,
+    LambdaCase
   build-depends: base, text, containers, mtl, conduit
   default-language: GHC2021
 
 library
   import: shared
-  exposed-modules: MyLib
+  exposed-modules:
+    SentGen.Tokenise.WhiteSpace
   -- other-modules:
   -- other-extensions:
   hs-source-dirs: src
@@ -22,9 +25,12 @@ library
 executable tatoeba
   import: shared
   main-is: Tatoeba.hs
-  -- other-modules:
+  other-modules:
+    Tatoeba.Convert,
+    Tatoeba.Frequency
   -- other-extensions:
   build-depends:
     sentence-generator,
-    optparse-applicative
+    optparse-applicative,
+    aeson
   hs-source-dirs: app

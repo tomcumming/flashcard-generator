@@ -1,15 +1,12 @@
-module MyLib (someFunc) where
+module SentGen.Tokenise.WhiteSpace (tokenise) where
 
 import Data.Char (isLetter)
 import Data.Sequence (Seq, fromList)
 import qualified Data.Text as T
 
-tokenize :: T.Text -> Seq T.Text
-tokenize =
+tokenise :: T.Text -> Seq T.Text
+tokenise =
   fromList
     . fmap T.toLower
     . filter (T.any isLetter)
     . T.split (not . isLetter)
-
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
